@@ -3,10 +3,11 @@ from tkinter import *
 root = Tk()
 root.title("CALCULATOR")
 
+#CREATING THE INPUT AND DISPLAY FIELD
 e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
-
+#FUNCTION FOR THE ON CLICK ACTION
 def buttonClick(x):
         if(x=="  "):
             e.delete(0, END)
@@ -18,7 +19,7 @@ def buttonClick(x):
             if(x==" "):
                 add(eqn)
 
-
+#FUNCTION TO ADD THE NUMBERS
 def add(numbers):
     num = numbers.split('+')
     total = 0
@@ -29,9 +30,7 @@ def add(numbers):
     e.insert(0, sum)
 
 
-
-
-
+#CREATING THE BUTTONS
 button1 = Button(root,text="1", padx=40,pady=20,command=lambda: buttonClick(1))
 button2 = Button(root,text="2", padx=40,pady=20,command=lambda: buttonClick(2))
 button3 = Button(root,text="3", padx=40,pady=20,command=lambda: buttonClick(3))
@@ -46,7 +45,7 @@ buttonadd = Button(root,text="+", padx=40,pady=20,command=lambda: buttonClick("+
 buttonequal = Button(root,text="=", padx=40,pady=20,command=lambda: buttonClick(" "))
 buttonclear = Button(root, text="CLEAR",padx=40,pady=20,command=lambda: buttonClick("  ") )
 
-
+#POSITIONING THE BUTTONS
 button1.grid(row=3,column=0, sticky="nsew")
 button2.grid(row=3,column=1, sticky="nsew")
 button3.grid(row=3,column=2, sticky="nsew")
@@ -61,4 +60,6 @@ buttonadd.grid(row=4,column=1, sticky="nsew")
 buttonequal.grid(row=4,column=2, sticky="nsew")
 buttonclear.grid(row=5, columnspan=3, sticky="nsew")
 
+
+#LOOP TO KEEP THE PROGRAM GOING ON
 root.mainloop()
